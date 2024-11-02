@@ -1,32 +1,39 @@
 function Header() {
   return (
-    <header>
+    <header
+      className="bg-dark"
+      style={{ minHeight: "5.5rem", display: "flex", alignItems: "center" }}
+    >
       <div className="container">
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-dark text-light">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="text-light navbar-brand" href="#">
               ToyCommerce
             </a>
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a
+                  className="nav-link text-light active"
+                  aria-current="page"
+                  href="#"
+                >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="text-light nav-link" href="#">
                   Add Product
                 </a>
               </li>
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle"
+                  className="text-light nav-link dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Categories
                 </a>
                 <ul className="dropdown-menu">
                   <li>
@@ -57,7 +64,7 @@ function Header() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-success" type="submit">
                 Search
               </button>
             </form>
