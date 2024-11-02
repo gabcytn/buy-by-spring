@@ -15,13 +15,13 @@ function Header() {
                 <a
                   className="nav-link text-light active"
                   aria-current="page"
-                  href="/"
+                  href="/home"
                 >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="text-light nav-link" href="#">
+                <a className="text-light nav-link" href="/product/create">
                   Add Product
                 </a>
               </li>
