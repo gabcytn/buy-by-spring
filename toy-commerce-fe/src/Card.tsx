@@ -1,8 +1,11 @@
-function Card() {
+type CardProps = {
+  id: number;
+};
+function Card({ id }: CardProps) {
   return (
     <div className="col-sm-6 col-lg-3 col-12">
       <a
-        href="#"
+        href={`/product/${id}`}
         className="card"
         style={{ width: "18rem;", textDecoration: "none" }}
       >
