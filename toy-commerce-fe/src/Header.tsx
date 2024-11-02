@@ -7,7 +7,7 @@ function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg bg-dark text-light">
           <div className="container-fluid">
-            <a className="text-light navbar-brand" href="#">
+            <a className="text-light navbar-brand" href="/">
               ToyCommerce
             </a>
             <ul className="navbar-nav">
@@ -15,7 +15,7 @@ function Header() {
                 <a
                   className="nav-link text-light active"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   Home
                 </a>
