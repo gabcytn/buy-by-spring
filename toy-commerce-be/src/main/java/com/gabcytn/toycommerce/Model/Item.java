@@ -12,6 +12,7 @@ public class Item {
     private String name;
     private String description;
     private int price;
+    // TODO (fix date format)
     private Date release_date;
     private int quantity;
 
