@@ -1,20 +1,25 @@
 package com.gabcytn.toycommerce.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 public class Item {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
     private int price;
-    // TODO (fix date format)
-    private Date release_date;
+    private LocalDate release_date;
     private int quantity;
+
+
 
     public int getId() {
         return id;
@@ -48,11 +53,11 @@ public class Item {
         this.price = price;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return release_date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.release_date = date;
     }
 
