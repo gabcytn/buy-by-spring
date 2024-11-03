@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -22,6 +23,12 @@ public class ItemController {
         return itemService.getAllItems();
     }
 
+    @PostMapping("/item")
+    public ResponseEntity<Optional<Item>> addItem (@RequestBody Item item) {
+        itemService.addItem(item);
+        return ResponseEntity.status(HttpStatus.CREATED).body(itemService.getItem(item.getId()));
+    }
+    
     @DeleteMapping("/item/{id}")
     public ResponseEntity<Item> deleteItem (@PathVariable int id) {
         itemService.deleteItem(id);
