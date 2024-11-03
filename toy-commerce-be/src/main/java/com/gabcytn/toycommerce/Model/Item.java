@@ -1,9 +1,6 @@
 package com.gabcytn.toycommerce.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -28,6 +25,11 @@ public class Item {
         this.price = price;
         this.release_date = release_date;
         this.quantity = quantity;
+    }
+
+    @PrePersist
+    public void onCreate () {
+        setDate(LocalDate.now());
     }
 
     public int getId() {
