@@ -20,7 +20,7 @@ public class Item {
 
 
     public Item () {}
-    public Item (int id)
+    public Item (int id) {}
     public Item(int id, String name, String description, int price, LocalDate release_date, int quantity) {
         this.id = id;
         this.name = name;
