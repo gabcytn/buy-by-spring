@@ -5,6 +5,7 @@ import com.gabcytn.toycommerce.Repository.ItemRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemService {
@@ -16,6 +17,14 @@ public class ItemService {
 
     public List<Item> getAllItems () {
         return itemRepository.findAll();
+    }
+
+    public Optional<Item> getItem (int id) {
+        return itemRepository.findById(id);
+    }
+
+    public void addItem (Item item) {
+        itemRepository.save(item);
     }
 
     public void deleteItem (int id) {
