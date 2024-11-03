@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class Item {
@@ -21,9 +20,7 @@ public class Item {
 
 
     public Item () {}
-    public Item (int id) {
-        this.id = id;
-    }
+    public Item (int id)
     public Item(int id, String name, String description, int price, LocalDate release_date, int quantity) {
         this.id = id;
         this.name = name;
