@@ -14,10 +14,13 @@ public class Item {
     private int price;
     private LocalDate release_date;
     private int quantity;
-
+    @Column(name = "image_url")
+    private String imageURL;
+    @Column(name = "image_public_id")
+    private String imagePublicID;
 
     public Item () {}
-    public Item( String name, String description, int price, int quantity) {
+    public Item(String name, String description, int price, int quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -75,5 +78,21 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImage() {
+        return imageURL;
+    }
+
+    public void setImage(String image) {
+        this.imageURL = image;
+    }
+
+    public String getImagePublicID() {
+        return imagePublicID;
+    }
+
+    public void setImagePublicID(String imagePublicID) {
+        this.imagePublicID = imagePublicID;
     }
 }
