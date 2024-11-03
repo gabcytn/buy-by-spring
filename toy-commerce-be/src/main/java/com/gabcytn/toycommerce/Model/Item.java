@@ -17,13 +17,10 @@ public class Item {
 
 
     public Item () {}
-    public Item (int id) {}
-    public Item(int id, String name, String description, int price, LocalDate release_date, int quantity) {
-        this.id = id;
+    public Item( String name, String description, int price, int quantity) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.release_date = release_date;
         this.quantity = quantity;
     }
 
