@@ -1,23 +1,28 @@
-type CardProps = {
-  id: number;
-};
-function Card({ id }: CardProps) {
+function Card({ render }: any) {
   return (
     <div className="col-sm-6 col-lg-3 col-12">
       <a
-        href={`/product/${id}`}
+        href={`/product/${render.id}`}
         className="card"
-        style={{ width: "18rem;", textDecoration: "none" }}
+        style={{ textDecoration: "none" }}
       >
-        <img src="#" className="card-img-top" alt="Image of a Card" />
+        <img
+          src={render.image}
+          className="card-img-top"
+          alt="Image of a Card"
+          style={{
+            width: "100%",
+            height: "200px",
+          }}
+        />
         <div className="card-body">
-          <h5 className="card-title">Lorem Ipsum</h5>
+          <h5 className="card-title">{render.name}</h5>
+          <p className="card-text">{render.description}</p>
           <p className="card-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            ipsam, quas veritatis reiciendis consequatur earum
+            <strong>P{render.price}.00</strong>
           </p>
           <a href="#" className="btn btn-primary">
-            Go somewhere
+            Add to Cart
           </a>
         </div>
       </a>
