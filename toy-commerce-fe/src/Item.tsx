@@ -8,6 +8,7 @@ type Item = {
   price: number;
   quantity: number;
   image: string;
+  date: string;
 };
 function Item() {
   const SERVER_URL = import.meta.env.VITE_SERVER_URL;
@@ -51,6 +52,7 @@ function Item() {
               <p className="text-light">{item?.description}</p>
               <p className="text-light">P{item?.price}.00</p>
               <p className="text-light">Qty: {item?.quantity}</p>
+              <p className="text-light">{item?.date}</p>
               <button
                 className="btn btn-warning me-2"
                 onClick={() => {
