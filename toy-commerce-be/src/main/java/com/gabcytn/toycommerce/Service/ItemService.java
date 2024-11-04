@@ -65,6 +65,9 @@ public class ItemService {
         return itemRepository.existsById(id);
     }
 
+    public List<Item> searchByNameOrDescription (String keyword) {
+        return itemRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(keyword, keyword);
+    }
 
     // PRIVATE METHODS
 
