@@ -88,7 +88,7 @@ public class Item {
         this.imageURL = image;
     }
 
-    public String getImagePublicID() {
+    public String doGetImagePublicID() {
         return imagePublicID;
     }
 
