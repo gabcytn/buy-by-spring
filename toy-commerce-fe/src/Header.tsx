@@ -1,4 +1,10 @@
-function Header() {
+import { useState } from "react";
+
+type PropTypes = {
+  handleSearch?: (e: React.FormEvent, keyword: string) => void;
+};
+function Header({ handleSearch }: PropTypes) {
+  const [search, setSearch] = useState("");
   return (
     <header
       className="bg-dark"
@@ -57,12 +63,28 @@ function Header() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            <form
+              className="d-flex"
+              role="search"
+              onSubmit={
+                handleSearch
+                  ? (e) => {
+                      handleSearch(e, search);
+                    }
+                  : undefined
+              }
+            >
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                id="search"
+                name="search"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
               />
               <button className="btn btn-success" type="submit">
                 Search
