@@ -32,6 +32,11 @@ public class ItemController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
+    @GetMapping("/search/{keyword}")
+    public List<Item> searchItem (@PathVariable String keyword) {
+        return itemService.searchByNameOrDescription(keyword);
+    }
+
     @PostMapping(path = "/item", consumes = "multipart/form-data")
     public ResponseEntity<Item> fileUploadTest(@RequestPart Item item, @RequestPart MultipartFile image) {
         try {
